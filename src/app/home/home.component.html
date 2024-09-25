@@ -1,0 +1,65 @@
+<ng-container *ngIf="show else preview">
+    <h1>Portfolio</h1>
+    <h2>Personal Information</h2>
+    <form>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="phone">Phone</label>
+            <input type="tel" name="tel" id="tel">
+        </div>
+        <div>
+            <label for="address">Address</label>
+            <input type="text" name="address" id="address">
+        </div>
+    </form>
+
+    <h2>Qualifications</h2>
+    <div>
+        <form>
+            <div>
+                <label for="school">School/College</label>
+                <input type="text" name="school" id="school">
+            </div>
+            <div>
+                <label for="degree">Degree</label>
+                <input type="text" name="degree" id="degree">
+            </div>
+            <div>
+                <label for="year">Year</label>
+                <input type="text" name="year" id="year">
+            </div>
+        </form>
+    </div>
+    <div class="btn-container">
+        <button>Add Qualification</button>
+        <button>Submit</button>
+    </div>
+</ng-container>
+
+<ng-template #preview>
+    <div class="preview-container">
+        <h2>Preview</h2>
+        <div>
+            <p></p>
+            <p>Email: </p>
+            <p>Phone: </p>
+            <p>Address: </p>
+        </div>
+        <div>
+            <h3>Qualification</h3>
+            <div>
+                <h5>School/College: </h5>
+                <h5>Degree: </h5>
+                <h5>Year: </h5>
+            </div>
+        </div>
+        <button class="btn-edit">Edit</button>
+    </div>
+</ng-template>
