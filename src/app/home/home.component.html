@@ -1,5 +1,5 @@
-<ng-container *ngIf="show else preview">
-    <h1>Portfolio</h1>
+<ng-container *ngIf="!isSubmitted else preview">
+    <h1 *ngIf="showHeading" >Portfolio</h1>
     <h2>Personal Information</h2>
     <form>
         <div>
@@ -22,6 +22,7 @@
 
     <h2>Qualifications</h2>
     <div class="qualification-section" *ngFor="let q of qualification; index as i">
+        <h3>Qualification {{i+1}}</h3>
         <form>
             <div>
                 <label for="school">School/College</label>
@@ -41,7 +42,7 @@
     </div>
     <div class="btn-container">
         <button (click)="addQualification()">Add Qualification</button>
-        <button>Submit</button>
+        <button (click)="submit()" >Submit</button>
     </div>
 </ng-container>
 
@@ -49,7 +50,7 @@
     <div class="preview-container">
         <h2>Preview</h2>
         <div>
-            <p>{{name}}</p>
+            <p [ngClass]="{'name' : true}" >{{name}}</p>
             <p>Email: {{email}}</p>
             <p>Phone: {{phone}}</p>
             <p>Address: {{address}}</p>
@@ -62,6 +63,6 @@
                 <h5>Year: {{q.year}}</h5>
             </div>
         </div>
-        <button class="btn-edit">Edit</button>
+        <button class="btn-edit" (click)="edit()">Edit</button>
     </div>
 </ng-template>

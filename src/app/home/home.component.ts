@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  show: boolean = true;
+  isSubmitted : boolean = false;
+  showHeading : boolean = true;
 
   // decalre variable for 2 way data binding
   name = '';
@@ -28,6 +29,16 @@ export class HomeComponent {
 
   deleteQualification(indexNumber : number) {
     this.qualification.splice(indexNumber, 1)
+  }
+
+  submit() {
+    this.isSubmitted = true;
+    this.showHeading = false;
+  }
+
+  edit() {
+    this.isSubmitted = false;
+    this.showHeading = true;
   }
 
 }

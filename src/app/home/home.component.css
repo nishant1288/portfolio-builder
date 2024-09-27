@@ -13,6 +13,8 @@ h2 {
     margin: 1rem auto;
 }
 
+h3 { text-align: center;}
+
 form {
     display: flex;
     flex-direction: column;
@@ -94,6 +96,11 @@ button:hover {
     position: absolute;
     right: 20px;
     bottom: 20px;
+}
+
+.name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 @media screen and (min-width : 768px) {
